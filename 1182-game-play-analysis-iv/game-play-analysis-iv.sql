@@ -1,4 +1,4 @@
-SELECT ROUND(COUNT(DISTINCT player_id) / (SELECT COUNT(distinct player_id) FROM Activity),
+SELECT ROUND(COUNT( player_id) / (SELECT COUNT(distinct player_id) FROM Activity),
     2
 ) AS fraction
 FROM Activity
