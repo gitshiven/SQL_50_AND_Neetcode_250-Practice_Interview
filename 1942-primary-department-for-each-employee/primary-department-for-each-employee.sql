@@ -21,3 +21,5 @@ HAVING COUNT(*) = 1);
 -- FROM Employee
 -- GROUP BY employee_id
 -- HAVING COUNT(department_id) = 1;
+
+-- https://youtube.com/shorts/JxSBtDhgz3g?si=iopzq1lusXpM2HDs
