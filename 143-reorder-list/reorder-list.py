@@ -8,18 +8,26 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        
-        nodes = []
-        curr = head
-        while curr:
-            nodes.append(curr)
-            curr = curr.next
+    # Step 1 — middle
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
-        l,r = 0, len(nodes)-1
-        
-        while l<r:
-            nodes[l].next = nodes[r]
-            l+=1
-            nodes[r].next = nodes[l]
-            r-=1
-        nodes[l].next = None
+    # Step 2 — reverse second half
+        prev, curr = None, slow
+        while curr:
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = tmp
+
+    # Step 3 — merge
+        first, second = head, prev
+        while second.next:
+            tmp1 = first.next
+            tmp2 = second.next
+            first.next = second
+            second.next = tmp1
+            first = tmp1
+            second = tmp2
