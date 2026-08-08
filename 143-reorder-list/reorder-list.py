@@ -20,11 +20,6 @@ class Solution:
         while l<r:
             nodes[l].next = nodes[r]
             l+=1
-
-            # if l==r:    #middle element
-            #     break
-
             nodes[r].next = nodes[l]
             r-=1
         nodes[l].next = None
-        
