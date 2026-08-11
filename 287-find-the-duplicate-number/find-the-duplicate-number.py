@@ -8,9 +8,11 @@ class Solution:
             fast = nums[nums[fast]]
             if slow == fast:
                 break
-        slow2 = nums[0]
-        while slow != slow2:
+        slow_2 = nums[0]
+        while True:
+            if slow==slow_2:
+                break
+            slow_2 = nums[slow_2]
             slow = nums[slow]
-            slow2 = nums[slow2]
-
+    
         return slow  
